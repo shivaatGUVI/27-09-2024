@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information</title>
+  </head>
+  <body>
+    <h1>Information Page</h1>
+    <h2 id="name"></h2>
+    <h3 id="email"></h3>
+  </body>
+  <script>
+    let url = window.location.href;
+    let dataArray = JSON.parse(localStorage.getItem("data"));
+    let index = Number(url[url.length - 1]);
+    console.log(index);
+    console.log(dataArray);
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+
+    let currentUser = dataArray[index];
+
+    name.innerText = currentUser.first_name;
+    email.innerText = currentUser.email;
+  </script>
+</html>
